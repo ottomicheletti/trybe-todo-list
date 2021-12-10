@@ -1,4 +1,4 @@
-// Requisito 5
+// Requisito 5 e 6
 
 function createNewTask() {
   let newTask = document.querySelector('#texto-tarefa');
@@ -20,3 +20,5 @@ function createNewTask() {
   });
 }
 createNewTask();
+
+// Requisito 7
