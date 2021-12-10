@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #264653;
+}
+
+main {
+  width: 60%;
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 2em auto;
+  padding: 1em;
+}
+
+/* Header */
+h1 {
+  font-family: 'Bebas Neue', cursive;
+}
+
+p {
+  font-family: 'Ubuntu', sans-serif;
+  font-style: italic;
+}
+
+#criar-tarefa,
+#texto-tarefa {
+  padding: 0.5em;
+  margin: 0.5em auto;
+  border-radius: 5px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#criar-tarefa {
+  background-color: #264653;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Section */
