@@ -1,8 +1,3 @@
-//Seletores
-const newTask = document.querySelector('#texto-tarefa');
-const addButton = document.querySelector('#criar-tarefa');
-const tasksList = document.querySelector('#lista-tarefas');
-
 // Requisito 7 e 8 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128) e não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo
 
 function changeColor(event) {
@@ -21,9 +16,11 @@ function addEventOnTask() {
 }
 
 // Requisito 5 e 6 - Adicione um botão com id="criar-tarefa" e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo. Ordene os itens da lista de tarefas por ordem de criação.
-
+const addButton = document.querySelector('#criar-tarefa');
 function createNewTask() {
-  if (newTask.value.length !== '') {
+  const newTask = document.querySelector('#texto-tarefa');
+  const tasksList = document.querySelector('#lista-tarefas');
+  if (newTask.value !== '') {
     const newLiItem = document.createElement('li');
     newLiItem.classList.add('item-lista');
     newLiItem.innerText = newTask.value;
@@ -34,7 +31,7 @@ function createNewTask() {
 }
 addButton.addEventListener('click', createNewTask);
 
-//Requisito 9 - Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível desfazer essa ação clicando novamente duas vezes no item
+// Requisito 9 - Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível desfazer essa ação clicando novamente duas vezes no item
 
 function completedTasks() {
   // const tasks = document.getElementsByClassName('item-lista');
@@ -48,3 +45,14 @@ function completedTasks() {
 }
 
 completedTasks();
+
+//Requisito 10 - Adicione um botão com id="apaga-tudo" que quando clicado deve apagar todos os itens da lista
+
+function deleteTasks() {
+  const tasksList = document.getElementById('lista-tarefas');
+
+  tasksList.innerHTML = '';
+}
+
+const deleteButton = document.getElementById('apaga-tudo');
+deleteButton.addEventListener('click', deleteTasks);

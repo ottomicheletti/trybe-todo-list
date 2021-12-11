@@ -32,7 +32,8 @@ p {
 }
 
 #criar-tarefa,
-#texto-tarefa {
+#texto-tarefa,
+#apaga-tudo {
   padding: 0.5em;
   margin: 0.5em auto;
   border-radius: 5px;
@@ -47,6 +48,15 @@ p {
   cursor: pointer;
   outline: none;
   border: 2px #2a9d8f solid;
+}
+
+#apaga-tudo {
+  background-color: #e76f51;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  border: 2px #e76f51 solid;
 }
 
 /* Section */
