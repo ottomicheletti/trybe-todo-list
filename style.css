@@ -34,7 +34,8 @@ p {
 #criar-tarefa,
 #texto-tarefa,
 #apaga-tudo,
-#remover-finalizados {
+#remover-finalizados,
+#salvar-tarefas {
   padding: 0.5em;
   margin: 0.5em auto;
   border-radius: 5px;
@@ -67,6 +68,15 @@ p {
   cursor: pointer;
   outline: none;
   border: 2px #f4a261 solid;
+}
+
+#salvar-tarefas {
+  background-color: #2a9d8f;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  border: 2px #2a9d8f solid;
 }
 
 /* Section */

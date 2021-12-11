@@ -1,3 +1,13 @@
+window.onload = function () {
+  const savedTasks = localStorage.getItem('tasks');
+  const parsedTasks = JSON.parse(savedTasks);
+  const tasksList = document.getElementById('lista-tarefas');
+
+  if (parsedTasks !== '') {
+    tasksList.innerHTML = parsedTasks;
+  }
+};
+
 // Requisito 7 e 8 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128) e não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo
 function changeColor(event) {
   const tasks = document.getElementsByClassName('item-lista');
@@ -66,3 +76,16 @@ function deleteCompletedTasks() {
 
 const deleteCompletedButton = document.getElementById('remover-finalizados');
 deleteCompletedButton.addEventListener('click', deleteCompletedTasks);
+
+// Requisito 12 - Adicione um botão com id="salvar-tarefas" que salve o conteúdo da lista. Se você fechar e reabrir a página, a lista deve continuar no estado em que estava
+function saveTasks() {
+  const tasksList = document.getElementById('lista-tarefas').innerHTML;
+  const tasksListStringfied = JSON.stringify(tasksList);
+
+  if (tasksList.length > 0) {
+    localStorage.setItem('tasks', tasksListStringfied);
+  }
+}
+
+const saveButton = document.getElementById('salvar-tarefas');
+saveButton.addEventListener('click', saveTasks);
