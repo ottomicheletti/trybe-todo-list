@@ -33,3 +33,18 @@ function createNewTask() {
   }
 }
 addButton.addEventListener('click', createNewTask);
+
+//Requisito 9 - Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível desfazer essa ação clicando novamente duas vezes no item
+
+function completedTasks() {
+  // const tasks = document.getElementsByClassName('item-lista');
+  document.addEventListener('dblclick', function (event) {
+    if (event.target.classList.contains('completed')) {
+      event.target.classList.remove('completed');
+    } else if (event.target.classList.contains('item-lista')) {
+      event.target.classList.add('completed');
+    }
+  });
+}
+
+completedTasks();
