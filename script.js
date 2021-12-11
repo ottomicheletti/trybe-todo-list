@@ -1,5 +1,4 @@
 // Requisito 7 e 8 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128) e não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo
-
 function changeColor(event) {
   const tasks = document.getElementsByClassName('item-lista');
   for (let index = 0; index < tasks.length; index += 1) {
@@ -10,7 +9,7 @@ function changeColor(event) {
 
 function addEventOnTask() {
   const tasks = document.getElementsByClassName('item-lista');
-  for (let index = 0; index < tasks.length; index++) {
+  for (let index = 0; index < tasks.length; index += 1) {
     tasks[index].addEventListener('click', changeColor);
   }
 }
@@ -31,10 +30,8 @@ function createNewTask() {
 }
 addButton.addEventListener('click', createNewTask);
 
-// Requisito 9 - Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível desfazer essa ação clicando novamente duas vezes no item
-
+// Requisito 9 - Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível desfazer essa ação clicando novamente duas vezes no item.
 function completedTasks() {
-  // const tasks = document.getElementsByClassName('item-lista');
   document.addEventListener('dblclick', function (event) {
     if (event.target.classList.contains('completed')) {
       event.target.classList.remove('completed');
@@ -46,8 +43,8 @@ function completedTasks() {
 
 completedTasks();
 
-//Requisito 10 - Adicione um botão com id="apaga-tudo" que quando clicado deve apagar todos os itens da lista
-
+// Requisito 10 - Adicione um botão com id="apaga-tudo" que quando clicado deve apagar todos os itens da lista.
+//* Inspirado por https://www.geeksforgeeks.org/remove-all-the-child-elements-of-a-dom-node-in-javascript/
 function deleteTasks() {
   const tasksList = document.getElementById('lista-tarefas');
 
@@ -56,3 +53,16 @@ function deleteTasks() {
 
 const deleteButton = document.getElementById('apaga-tudo');
 deleteButton.addEventListener('click', deleteTasks);
+
+// Requisito 11 - Adicione um botão com id="remover-finalizados" que quando clicado remove somente os elementos finalizados da sua lista.
+//* Inspirado por https://stackoverflow.com/a/14066534
+function deleteCompletedTasks() {
+  const completedTasks = document.getElementsByClassName('completed');
+
+  while (completedTasks.length > 0) {
+    completedTasks[0].parentNode.removeChild(completedTasks[0]);
+  }
+}
+
+const deleteCompletedButton = document.getElementById('remover-finalizados');
+deleteCompletedButton.addEventListener('click', deleteCompletedTasks);
