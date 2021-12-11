@@ -59,6 +59,7 @@ function deleteTasks() {
   const tasksList = document.getElementById('lista-tarefas');
 
   tasksList.innerHTML = '';
+  localStorage.removeItem('tasks');
 }
 
 const deleteButton = document.getElementById('apaga-tudo');
@@ -77,7 +78,7 @@ function deleteCompletedTasks() {
 const deleteCompletedButton = document.getElementById('remover-finalizados');
 deleteCompletedButton.addEventListener('click', deleteCompletedTasks);
 
-// Requisito 12 - Adicione um botão com id="salvar-tarefas" que salve o conteúdo da lista. Se você fechar e reabrir a página, a lista deve continuar no estado em que estava
+// Requisito 12 - Adicione um botão com id="salvar-tarefas" que salve o conteúdo da lista. Se você fechar e reabrir a página, a lista deve continuar no estado em que estava - (A segunda parte do código está no início do arquivo para ser executado onload)
 function saveTasks() {
   const tasksList = document.getElementById('lista-tarefas').innerHTML;
   const tasksListStringfied = JSON.stringify(tasksList);
@@ -89,3 +90,5 @@ function saveTasks() {
 
 const saveButton = document.getElementById('salvar-tarefas');
 saveButton.addEventListener('click', saveTasks);
+
+// Requisito 13 - Adicione dois botões, um com id="mover-cima" e outro com id="mover-baixo", que permitam mover o item selecionado para cima ou para baixo na lista de tarefas
