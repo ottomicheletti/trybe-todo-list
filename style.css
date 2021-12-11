@@ -4,7 +4,13 @@
 }
 
 body {
-  background-color: #264653;
+  height: 100vh;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(38, 70, 83, 1) 100%
+  );
 }
 
 main {
@@ -35,9 +41,12 @@ p {
 }
 
 #criar-tarefa {
-  background-color: #264653;
+  background-color: #2a9d8f;
   color: #fff;
   font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  border: 2px #2a9d8f solid;
 }
 
 /* Section */
@@ -45,4 +54,14 @@ p {
   font-family: 'Ubuntu', sans-serif;
   margin: 0.5em 1em;
   font-size: larger;
+}
+
+.item-lista {
+  margin: 0.2em auto;
+  padding: 0.2em;
+  border-radius: 5px;
+}
+
+.ativo {
+  background-color: rgb(128, 128, 128);
 }

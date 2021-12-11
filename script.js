@@ -1,24 +1,35 @@
-// Requisito 5 e 6
+//Seletores
+const newTask = document.querySelector('#texto-tarefa');
+const addButton = document.querySelector('#criar-tarefa');
+const tasksList = document.querySelector('#lista-tarefas');
+
+// Requisito 7 e 8 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128) e não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo
+
+function changeColor(event) {
+  const tasks = document.getElementsByClassName('item-lista');
+  for (let index = 0; index < tasks.length; index += 1) {
+    tasks[index].classList.remove('ativo');
+  }
+  event.target.classList.add('ativo');
+}
+
+function addEventOnTask() {
+  const tasks = document.getElementsByClassName('item-lista');
+  for (let index = 0; index < tasks.length; index++) {
+    tasks[index].addEventListener('click', changeColor);
+  }
+}
+
+// Requisito 5 e 6 - Adicione um botão com id="criar-tarefa" e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo. Ordene os itens da lista de tarefas por ordem de criação.
 
 function createNewTask() {
-  let newTask = document.querySelector('#texto-tarefa');
-  let newLiItem = document.createElement('li');
-  let olItem = document.querySelector('#lista-tarefas');
-
-  document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('criar-tarefa')) {
-      if (newTask.value.length > 0) {
-        let newLiItem = document.createElement('li');
-        newLiItem.innerText = newTask.value;
-
-        olItem.appendChild(newLiItem);
-        newTask.value = '';
-      } else {
-        alert('Error: Digite ao menos 1 caractere.');
-      }
-    }
-  });
+  if (newTask.value.length !== '') {
+    const newLiItem = document.createElement('li');
+    newLiItem.classList.add('item-lista');
+    newLiItem.innerText = newTask.value;
+    tasksList.appendChild(newLiItem);
+    newTask.value = '';
+    addEventOnTask();
+  }
 }
-createNewTask();
-
-// Requisito 7
+addButton.addEventListener('click', createNewTask);
