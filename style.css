@@ -35,47 +35,55 @@ p {
 #texto-tarefa,
 #apaga-tudo,
 #remover-finalizados,
-#salvar-tarefas {
+#salvar-tarefas,
+#mover-cima,
+#mover-baixo {
   padding: 0.5em;
   margin: 0.5em auto;
   border-radius: 5px;
   font-family: 'Ubuntu', sans-serif;
   font-size: medium;
+  font-weight: bold;
+  outline: none;
+}
+
+#criar-tarefa,
+#apaga-tudo,
+#remover-finalizados,
+#salvar-tarefas,
+#mover-cima,
+#mover-baixo {
+  cursor: pointer;
+  color: #fff;
 }
 
 #criar-tarefa {
   background-color: #2a9d8f;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
+  border: 2px #2a9d8f solid;
+}
+
+#mover-cima {
+  background-color: #2a9d8f;
+  border: 2px #2a9d8f solid;
+}
+
+#mover-baixo {
+  background-color: #2a9d8f;
   border: 2px #2a9d8f solid;
 }
 
 #apaga-tudo {
   background-color: #e76f51;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
   border: 2px #e76f51 solid;
 }
 
 #remover-finalizados {
   background-color: #f4a261;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
   border: 2px #f4a261 solid;
 }
 
 #salvar-tarefas {
   background-color: #2a9d8f;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
   border: 2px #2a9d8f solid;
 }
 
