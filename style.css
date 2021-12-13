@@ -37,7 +37,8 @@ p {
 #remover-finalizados,
 #salvar-tarefas,
 #mover-cima,
-#mover-baixo {
+#mover-baixo,
+#remover-selecionado {
   padding: 0.5em;
   margin: 0.5em auto;
   border-radius: 5px;
@@ -52,7 +53,8 @@ p {
 #remover-finalizados,
 #salvar-tarefas,
 #mover-cima,
-#mover-baixo {
+#mover-baixo,
+#remover-selecionado {
   cursor: pointer;
   color: #fff;
 }
@@ -72,14 +74,19 @@ p {
   border: 2px #2a9d8f solid;
 }
 
-#apaga-tudo {
-  background-color: #e76f51;
-  border: 2px #e76f51 solid;
+#remover-selecionado {
+  background-color: #e9c46a;
+  border: 2px #e9c46a solid;
 }
 
 #remover-finalizados {
   background-color: #f4a261;
   border: 2px #f4a261 solid;
+}
+
+#apaga-tudo {
+  background-color: #e76f51;
+  border: 2px #e76f51 solid;
 }
 
 #salvar-tarefas {

@@ -126,3 +126,13 @@ downButton.addEventListener('click', function () {
     moveDown();
   } catch (error) {}
 });
+
+// Requisito 14 - Adicione um botão com id="remover-selecionado" que, quando clicado, remove o item selecionado.
+function deleteSelectedTask() {
+  const ativo = document.querySelector('.ativo');
+
+  ativo.remove();
+}
+
+const delSelectedButton = document.getElementById('remover-selecionado');
+delSelectedButton.addEventListener('click', deleteSelectedTask);
