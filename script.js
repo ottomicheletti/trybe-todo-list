@@ -25,7 +25,6 @@ function addEventOnTask() {
 }
 
 // Requisito 5 e 6 - Adicione um botão com id="criar-tarefa" e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo. Ordene os itens da lista de tarefas por ordem de criação.
-const addButton = document.querySelector('#criar-tarefa');
 function createNewTask() {
   const newTask = document.querySelector('#texto-tarefa');
   const tasksList = document.querySelector('#lista-tarefas');
@@ -38,6 +37,7 @@ function createNewTask() {
     addEventOnTask();
   }
 }
+const addButton = document.querySelector('#criar-tarefa');
 addButton.addEventListener('click', createNewTask);
 
 // Requisito 9 - Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completo. Deve ser possível desfazer essa ação clicando novamente duas vezes no item.
