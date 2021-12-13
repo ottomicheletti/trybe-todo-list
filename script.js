@@ -92,9 +92,6 @@ const saveButton = document.getElementById('salvar-tarefas');
 saveButton.addEventListener('click', saveTasks);
 
 // Requisito 13 - Adicione dois botões, um com id="mover-cima" e outro com id="mover-baixo", que permitam mover o item selecionado para cima ou para baixo na lista de tarefas
-const ativo = document.querySelector('.ativo');
-const lista = document.querySelector('ol');
-
 function moveUp() {
   const ativo = document.querySelector('.ativo');
   const lista = document.querySelector('ol');
@@ -106,7 +103,11 @@ function moveUp() {
   }
 }
 const upButton = document.getElementById('mover-cima');
-upButton.addEventListener('click', moveUp);
+upButton.addEventListener('click', function () {
+  try {
+    moveUp();
+  } catch (error) {}
+});
 
 function moveDown() {
   const ativo = document.querySelector('.ativo');
@@ -120,4 +121,8 @@ function moveDown() {
 }
 
 const downButton = document.getElementById('mover-baixo');
-downButton.addEventListener('click', moveDown);
+downButton.addEventListener('click', function () {
+  try {
+    moveDown();
+  } catch (error) {}
+});
